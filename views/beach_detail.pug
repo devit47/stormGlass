@@ -1,0 +1,16 @@
+extends layout
+
+block content
+
+  //- h1 Beach: #{beach.beach_name}
+  
+  div(style='margin-left:20px;margin-top:20px')
+    
+    dl
+    each beach in beach_detail
+      dt 
+        a(href=beach.url) #{beach.title}
+      dd #{beach.summary}
+
+    else
+      p No beaches

@@ -1,0 +1,18 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #[em Storm47] - find reports for beaches in your area
+
+  br
+  br
+  h3 Site stats
+
+  if error
+    p Error getting dynamic content.
+  else
+    p The database has the following record counts:
+
+    ul
+      li #[strong Beaches:] !{data.beach_count}
+      li #[strong Members:] !{data.member_count}

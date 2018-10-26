@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  h1 #{title}: #{beach.beach_name}
+  p= beach.location
+
+  p Do you really want to delete this beach?
+    
+    form(method='POST' action='')
+      div.form-group
+        input#beachid.form-control(type='hidden',name='beachid', required='true', value=beach._id )
+
+      button.btn.btn-primary(type='submit') Delete

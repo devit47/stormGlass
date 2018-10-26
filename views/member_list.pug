@@ -1,0 +1,21 @@
+extends layout
+
+block content
+  h1= title
+  
+  //- ul
+  //-   each member in member_list
+  //-     li 
+  //-       a(href=member.url) #{member.v_user_name}
+
+  //-   else
+  //-     li There are no members.
+
+  dl
+      each member in member_list
+        dt 
+          a(href=member.url) #{member.v_user_name} 
+        dd Last login: #{member.v_last_login}
+
+      else
+        p There are no members registered.

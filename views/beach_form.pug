@@ -1,0 +1,23 @@
+extends layout
+
+block content
+  h1=title
+
+  form(method='POST' action='')
+    div.form-group
+      label(for='beach_name') Beach Name:
+      input#beach_name.form-control(type='text' placeholder='e.g. Lahinch' name='beach_name' required='true' value=(undefined===beach ? '' : beach.beach_name) )
+      label(for='location') Location:
+      input#location.form-control(type='text' placeholder='e.g Clare' name='location' required='true' value=(undefined===beach ? '' : beach.location))
+      label(for='wind_speed') Wind speed:
+      input#wind_speed.form-control(type='text' placeholder='e.g 24' name='wind_speed' required='true' value=(undefined===beach ? '' : beach.wind_speed))
+      label(for='wind_direction') Wind direction:
+      input#wind_direction.form-control(type='text' placeholder='e.g NNW' name='wind_direction' required='true' value=(undefined===beach ? '' : beach.wind_direction))    
+      label(for='difficulty') Difficulty:
+      input#difficulty.form-control(type='text' placeholder='e.g Beginner' name='difficulty' required='true' value=(undefined===beach ? '' : beach.difficulty))    
+    div.form-group
+    button.btn.btn-primary(type='submit') Submit
+  if errors 
+    ul
+      for error in errors
+        li!= error.msg
